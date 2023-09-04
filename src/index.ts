@@ -51,6 +51,43 @@ const you: {
    stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
+const properties: {
+    img: string;
+    title: string;
+    price: number;
+    address1: string;
+    town: string;
+    postcode: number;
+    country: string;
+    contact: string;
+    AvailableToRent: boolean;
+    
+}[]=[
+    {
+    img:'',
+    title: 'Home Away',
+    price: 300,
+    address1: '456 HomeAway St.',
+    town: "Boston",
+    postcode: 897890,
+    country: 'usa',
+    contact: '6174595959',
+    AvailableToRent: true,
+    },
+    {
+    img:'',
+    title: 'Home Away',
+    price: 300,
+    address1: '456 HomeAway St.',
+    town: "Boston",
+    postcode: 897890,
+    country: 'usa',
+    contact: '6174595959',
+    AvailableToRent: true,
+    }
+]
+
+
 console.log(you.userName)
 
 function populateUser(isReturning : boolean, name: string ) {

@@ -154,6 +154,27 @@ var you = {
   age: 26,
   stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 };
+var properties = [{
+  img: '',
+  title: 'Home Away',
+  price: 300,
+  address1: '456 HomeAway St.',
+  town: "Boston",
+  postcode: 897890,
+  country: 'usa',
+  contact: '6174595959',
+  AvailableToRent: true
+}, {
+  img: '',
+  title: 'Home Away',
+  price: 300,
+  address1: '456 HomeAway St.',
+  town: "Boston",
+  postcode: 897890,
+  country: 'usa',
+  contact: '6174595959',
+  AvailableToRent: true
+}];
 console.log(you.userName);
 function populateUser(isReturning, name) {
   if (isReturning) {
