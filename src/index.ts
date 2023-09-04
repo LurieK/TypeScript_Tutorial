@@ -2,6 +2,7 @@
 import { showReviewTotal, populateUser } from './utils'
 
 
+
 const reviews: {
     name: string;
     stars: number;
@@ -53,18 +54,18 @@ const properties: {
     
 }[]=[
     {
-        img:'',
+        img:'./src/img/london-property.jpg',
         title: 'Home Away',
         price: 300,
         address1: '456 HomeAway St.',
-        town: "Boston",
+        town: 'London',
         postcode: 897890,
-        country: 'usa',
+        country: 'United Kingdom',
         contact: 'home@away.com',
         AvailableToRent: true,
     },
     {
-        img:'',
+        img:'./src/img/colombia-property.jpg',
         title: 'Home Today',
         price: 300,
         address1: '890 Developer Rd.',
@@ -75,13 +76,13 @@ const properties: {
         AvailableToRent: true,
         },
     {
-        img:'',
+        img:'./src/img/poland-property.jpg',
         title: 'Paradise',
         price: 300,
         address1: '24 Paradise Way',
-        town: 'Miami',
+        town: 'Gdansk',
         postcode: 45628,
-        country: 'usa',
+        country: 'Poland',
         contact: 'paradise@paradise.com',
         AvailableToRent: false,
     },
@@ -90,4 +91,17 @@ const properties: {
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(!!you.isReturning, you.userName.firstName)
+
+const propertyContainer = document.querySelector('.properties')!
+
+for (let i=0; i< properties.length; i++){
+    const card = document.createElement('div')
+    card.classList.add('card')
+    card.innerHTML = properties[i].title
+    const image = document.createElement('img')
+    image.setAttribute('src', properties[i].img)
+    card.appendChild(image)
+    propertyContainer.appendChild(card)
+}
+
 

@@ -172,17 +172,17 @@ var you = {
   stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 };
 var properties = [{
-  img: '',
+  img: './src/img/london-property.jpg',
   title: 'Home Away',
   price: 300,
   address1: '456 HomeAway St.',
-  town: "Boston",
+  town: 'London',
   postcode: 897890,
-  country: 'usa',
+  country: 'United Kingdom',
   contact: 'home@away.com',
   AvailableToRent: true
 }, {
-  img: '',
+  img: './src/img/colombia-property.jpg',
   title: 'Home Today',
   price: 300,
   address1: '890 Developer Rd.',
@@ -192,18 +192,28 @@ var properties = [{
   contact: 'hometoday@home.com',
   AvailableToRent: true
 }, {
-  img: '',
+  img: './src/img/poland-property.jpg',
   title: 'Paradise',
   price: 300,
   address1: '24 Paradise Way',
-  town: 'Miami',
+  town: 'Gdansk',
   postcode: 45628,
-  country: 'usa',
+  country: 'Poland',
   contact: 'paradise@paradise.com',
   AvailableToRent: false
 }];
 (0, utils_1.showReviewTotal)(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 (0, utils_1.populateUser)(!!you.isReturning, you.userName.firstName);
+var propertyContainer = document.querySelector('.properties');
+for (var i = 0; i < properties.length; i++) {
+  var card = document.createElement('div');
+  card.classList.add('card');
+  card.innerHTML = properties[i].title;
+  var image = document.createElement('img');
+  image.setAttribute('src', properties[i].img);
+  card.appendChild(image);
+  propertyContainer.appendChild(card);
+}
 },{"./utils":"src/utils.ts"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
