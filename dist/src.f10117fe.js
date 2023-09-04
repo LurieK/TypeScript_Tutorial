@@ -117,13 +117,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/index.ts":[function(require,module,exports) {
+})({"src/utils.ts":[function(require,module,exports) {
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.populateUser = exports.showReviewTotal = void 0;
 var returningUserDisplay = document.querySelector('#returning-user');
 var userNameDisplay = document.querySelector('#user');
 var reviewTotalDisplay = document.querySelector('#reviews');
-var isOpen;
+function showReviewTotal(value, reviewer, isLoyalty) {
+  var iconDisplay = isLoyalty ? '⭐' : '';
+  reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + ' ' + iconDisplay;
+}
+exports.showReviewTotal = showReviewTotal;
+function populateUser(isReturning, name) {
+  if (isReturning) {
+    returningUserDisplay.innerHTML = 'back';
+  }
+  userNameDisplay.innerHTML = name;
+}
+exports.populateUser = populateUser;
+},{}],"src/index.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var utils_1 = require("./utils");
 var reviews = [{
   name: 'Sheia',
   stars: 5,
@@ -140,11 +162,6 @@ var reviews = [{
   loyaltyUser: true,
   date: '27-03-2021'
 }];
-function showReviewTotal(value, reviewer, isLoyalty) {
-  var iconDisplay = isLoyalty ? '⭐' : '';
-  reviewTotalDisplay.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + ' ' + iconDisplay;
-}
-showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 var you = {
   userName: {
     firstName: 'Bobby',
@@ -175,15 +192,9 @@ var properties = [{
   contact: '6174595959',
   AvailableToRent: true
 }];
-console.log(you.userName);
-function populateUser(isReturning, name) {
-  if (isReturning) {
-    returningUserDisplay.innerHTML = 'back';
-  }
-  userNameDisplay.innerHTML = name;
-}
-populateUser(!!you.isReturning, you.userName.firstName);
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, utils_1.showReviewTotal)(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
+(0, utils_1.populateUser)(!!you.isReturning, you.userName.firstName);
+},{"./utils":"src/utils.ts"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
