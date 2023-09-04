@@ -179,18 +179,28 @@ var properties = [{
   town: "Boston",
   postcode: 897890,
   country: 'usa',
-  contact: '6174595959',
+  contact: 'home@away.com',
   AvailableToRent: true
 }, {
   img: '',
-  title: 'Home Away',
+  title: 'Home Today',
   price: 300,
-  address1: '456 HomeAway St.',
-  town: "Boston",
-  postcode: 897890,
-  country: 'usa',
-  contact: '6174595959',
+  address1: '890 Developer Rd.',
+  town: "London",
+  postcode: 34567,
+  country: 'UK',
+  contact: 'hometoday@home.com',
   AvailableToRent: true
+}, {
+  img: '',
+  title: 'Paradise',
+  price: 300,
+  address1: '24 Paradise Way',
+  town: 'Miami',
+  postcode: 45628,
+  country: 'usa',
+  contact: 'paradise@paradise.com',
+  AvailableToRent: false
 }];
 (0, utils_1.showReviewTotal)(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 (0, utils_1.populateUser)(!!you.isReturning, you.userName.firstName);
