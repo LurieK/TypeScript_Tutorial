@@ -172,7 +172,7 @@ var you = {
   stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 };
 var properties = [{
-  img: './src/img/london-property.jpg',
+  img: 'img/colombia-property.png',
   title: 'Home Away',
   price: 300,
   address1: '456 HomeAway St.',
@@ -182,7 +182,7 @@ var properties = [{
   contact: 'home@away.com',
   AvailableToRent: true
 }, {
-  img: './src/img/colombia-property.jpg',
+  img: '../img/colombia-property.png',
   title: 'Home Today',
   price: 300,
   address1: '890 Developer Rd.',
@@ -192,7 +192,7 @@ var properties = [{
   contact: 'hometoday@home.com',
   AvailableToRent: true
 }, {
-  img: './src/img/poland-property.jpg',
+  img: '../img/poland-property.png',
   title: 'Paradise',
   price: 300,
   address1: '24 Paradise Way',
@@ -210,7 +210,9 @@ for (var i = 0; i < properties.length; i++) {
   card.classList.add('card');
   card.innerHTML = properties[i].title;
   var image = document.createElement('img');
+  console.log("Setting image src to:", properties[i].img);
   image.setAttribute('src', properties[i].img);
+  console.log("Image src is now:", image.getAttribute('src'));
   card.appendChild(image);
   propertyContainer.appendChild(card);
 }
@@ -239,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44241" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43167" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
