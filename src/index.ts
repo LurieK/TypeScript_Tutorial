@@ -54,7 +54,7 @@ const properties: {
     
 }[]=[
     {
-        img:'./src/img/london-property.jpg',
+        img:'img/colombia-property.png',
         title: 'Home Away',
         price: 300,
         address1: '456 HomeAway St.',
@@ -65,7 +65,7 @@ const properties: {
         AvailableToRent: true,
     },
     {
-        img:'./src/img/colombia-property.jpg',
+        img:'../img/colombia-property.png',
         title: 'Home Today',
         price: 300,
         address1: '890 Developer Rd.',
@@ -76,7 +76,7 @@ const properties: {
         AvailableToRent: true,
         },
     {
-        img:'./src/img/poland-property.jpg',
+        img:'../img/poland-property.png',
         title: 'Paradise',
         price: 300,
         address1: '24 Paradise Way',
@@ -99,9 +99,16 @@ for (let i=0; i< properties.length; i++){
     card.classList.add('card')
     card.innerHTML = properties[i].title
     const image = document.createElement('img')
-    image.setAttribute('src', properties[i].img)
+
+    console.log("Setting image src to:", properties[i].img);
+    image.setAttribute('src', properties[i].img);
+    console.log("Image src is now:", image.getAttribute('src'));
+
+
+   
     card.appendChild(image)
     propertyContainer.appendChild(card)
+  
 }
 
 
