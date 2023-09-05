@@ -172,17 +172,17 @@ var you = {
   stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 };
 var properties = [{
-  img: 'img/colombia-property.png',
+  img: '/img/colombia-property.png',
   title: 'Home Away',
   price: 300,
   address1: '456 HomeAway St.',
-  town: 'London',
+  town: 'Bogota',
   postcode: 897890,
-  country: 'United Kingdom',
+  country: 'Columbia',
   contact: 'home@away.com',
   AvailableToRent: true
 }, {
-  img: '../img/colombia-property.png',
+  img: '/img/london-property.png',
   title: 'Home Today',
   price: 300,
   address1: '890 Developer Rd.',
@@ -192,7 +192,7 @@ var properties = [{
   contact: 'hometoday@home.com',
   AvailableToRent: true
 }, {
-  img: '../img/poland-property.png',
+  img: '/img/poland-property.png',
   title: 'Paradise',
   price: 300,
   address1: '24 Paradise Way',
@@ -241,7 +241,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43167" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59874" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

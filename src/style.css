@@ -25,7 +25,7 @@ body {
   height: 30px;
   width: 46px;
   background-size: 47px;
-  background-image: url("/img/sofa-logo.png");
+  background-image: url("../img/sofa-logo.png");
   margin: 20px;
 }
 
